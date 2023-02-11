@@ -8,14 +8,14 @@ router.get('/',(req,res,next)=>{
 
 //question 9
 router.get('/instock/:qt',(req,res,next)=>{
-    const listProducts = ['MACBOOKPRO','MACBOOKAIR','LENOVOX230'];
     const qt = req.params.qt;
     let prod=[];
-    listProducts.forEach(idProd => {
-        if(data[idProd].stock>qt){
-            prod.push(data[idProd])
-        }
-    });
+ 
+    for(var p in data){
+       if(data[p].stock>qt){
+        prod.push(data[p]);
+       }
+    }
     console.log(prod);
   res.json(prod);
 });
