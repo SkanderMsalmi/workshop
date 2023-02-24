@@ -4,9 +4,18 @@ var Student = new Schema(
     {
         Name:{
             type: String ,
-            unique:true
+            unique:true,
+            required:true
         },
-        Age:Number
+        Age:{
+           type: Number,
+            required:true
+        },
+
+        Note:{
+          type:  Number,
+          required:true
+        }
     }
 );
 
